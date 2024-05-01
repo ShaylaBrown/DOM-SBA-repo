@@ -20,8 +20,14 @@ const reset = () => {
     currentTask = {};
   }
   
-openTaskFormBtn.addEventListener("click", () => taskForm.classList.toggle("hidden"));
-closeTaskFormBtn.addEventListener("click", () => confirmCloseDialog.showModal());
+  openTaskFormBtn.addEventListener("click", () =>
+  taskForm.classList.toggle("hidden")
+);
+
+closeTaskFormBtn.addEventListener("click", () => {
+  const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+});
+
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 discardBtn.addEventListener("click", () => {
     confirmCloseDialog.close()
